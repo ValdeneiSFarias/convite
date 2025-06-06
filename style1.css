@@ -91,7 +91,24 @@ button{
         filter: brightness(1.2);
     }
 }
-
+@media (max-width: 600px) {
+    .menu-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 5px;
+        gap: 10px;
+    }
+    .menu-header > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+    .menu-header button {
+        width: 100%;
+        font-size: 1.1em;
+    }
+}
 .menu-header button {
     animation: pisca-sombra 5s;
     transition: box-shadow 1s;
