@@ -14,3 +14,9 @@ document.querySelectorAll('.reservarBtn').forEach(btn => {
         btn.textContent = "Reservado!";
     });
 });
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth < 600) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+});

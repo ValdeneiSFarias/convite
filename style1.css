@@ -21,23 +21,26 @@ body {
     padding: 0;
 }
 header {
+    display: flex;
+    flex-direction: row;
     position: fixed;
+    flex-wrap: nowrap;
     top: 0;
     left: 0;
     width: 100vw;
     z-index: 1000;
 
 }
-header > div{
-    display: grid;
-    grid-template-columns: 50vw 50vw;
-    grid-template-areas: "p1 s1";
+header > div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
     background-color: rgba(0, 255, 255, 0.249);
-    width: cover;
+    width: 100%;
     padding: 0;
     top: 0;
     position: absolute;
-    margin-top: 0 auto;
+    margin: 0 auto;
     box-shadow: 2px 3px 10px rgba(159, 159, 159, 0.575);  
 
 }
@@ -57,14 +60,7 @@ header > div{
     align-items: center;
     min-height: 80vh; /* Ajuste conforme a altura do seu header */
     width: 100vw;
-    margin-top: 100px; /* Espaço para o header fixo */
-}
-.menu-header {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
-    gap: 10%;               /* Espaço entre os botões */
-    width: 100%;
+    margin-top: 130px; /* Espaço para o header fixo */
 }
 
 button{
@@ -73,7 +69,7 @@ button{
     margin-inline: center;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 1px 2px;
     font-size: 2em;
     font-family: 'chewy', sans-serif;
     color: #0000ff;
@@ -84,31 +80,32 @@ button{
        text-shadow: 2px 1px 4px rgb(1, 41, 8); 
     }
 }
-.menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    gap: 10px;
-}
 
 /* Para telas menores (celular) */
 @media (max-width: 600px) {
     .menu-header {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
         padding: 10px 5px;
-        gap: 10px;
+        gap: 1px;
+    
     }
     .menu-header > div {
-        width: 100%;
         display: flex;
+        flex-wrap: nowrap;
         justify-content: center;
-        margin-bottom: 8px;
+        margin: 0 auto;
+        white-space: nowrap;
+       
     }
     .menu-header button {
-        width: 100%;
-        font-size: 1.1em;
+        flex-wrap: nowrap;
+        width: 30vw;
+        max-width: 50px;
+        min-width: 50px;
+        font-size: 0.5em;
+        box-sizing: border-box;
     }
 }
 @keyframes pisca-sombra {
@@ -120,7 +117,9 @@ button{
 }
 @media (max-width: 600px) {
     .menu-header {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
         align-items: stretch;
         padding: 10px 5px;
         gap: 10px;
@@ -128,12 +127,17 @@ button{
     .menu-header > div {
         width: 100%;
         display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
         justify-content: center;
         margin-bottom: 8px;
     } 
     .menu-header button {
-        width: 100%;
-        font-size: 1.1em;
+        flex-wrap: nowrap;
+        width: 50vw;
+        max-width: 350px;
+        min-width: 10px;
+        font-size: 1em;
     }
 }
 .menu-header button {
@@ -214,5 +218,34 @@ button{
     }
     .lista-opcoes > li#pl {
         max-width: 420px;
+    }
+}
+
+/* Responsivo para celular */
+@media (max-width: 600px) {
+    header > div {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: static;
+    }
+    .menu-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+    .menu-header > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .menu-header button {
+        width: 90vw;
+        max-width: 350px;
+        min-width: 150px;
+        font-size: 1.2em;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 }
