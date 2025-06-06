@@ -103,7 +103,7 @@ button{
         display: flex;
         justify-content: center;
         margin-bottom: 8px;
-    }
+    } 
     .menu-header button {
         width: 100%;
         font-size: 1.1em;
