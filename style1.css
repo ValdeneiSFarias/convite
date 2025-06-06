@@ -84,6 +84,33 @@ button{
        text-shadow: 2px 1px 4px rgb(1, 41, 8); 
     }
 }
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    gap: 10px;
+}
+
+/* Para telas menores (celular) */
+@media (max-width: 600px) {
+    .menu-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 5px;
+        gap: 10px;
+    }
+    .menu-header > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+    .menu-header button {
+        width: 100%;
+        font-size: 1.1em;
+    }
+}
 @keyframes pisca-sombra {
 
     50% {
